@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pikachu game</title>
+    <style src='main.css'>
+        canvas {
+            position: absolute
+        }
+        
+        #player-canvas {
+            z-index: 10
+        }
+        
+        #pokeball-canvas {
+            z-index: 5
+        }
+        
+        #pokeball-rolling {
+            border-radius: 50px
+        }
+    </style>
+    <script src='bower_components\jquery\dist\jquery.js'></script>
+</head>
+
+<body>
+    <canvas id='player-canvas' width=1 200></canvas>
+    <canvas id='pokeball-canvas'></canvas>
+    <img src='./imgs/pikachu_running.jpg' id='pikachu-running' style='display : none'>
+    <img src="./imgs/pokeball-rolling.jpg" id='pokeball-rolling' style='display : none'>
+    <script src='script.js'></script>
+    <script src='sprite.js'></script>
+    <script src='physical-body.js'></script>
+</body>
+
+</html>

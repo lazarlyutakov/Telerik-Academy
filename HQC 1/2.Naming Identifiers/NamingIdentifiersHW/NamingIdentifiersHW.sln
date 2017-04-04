@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "RefactorCodes\Logger.csproj", "{FAE84B87-DB42-4546-8A43-444022102CB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonCreator", "PersonCreator\PersonCreator.csproj", "{5C2D80B7-FB73-479E-9A12-10EC4E8AB40F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineSweeper", "MineSweeper\MineSweeper.csproj", "{3E2CE515-A7A9-471B-B05D-26913D907FB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAE84B87-DB42-4546-8A43-444022102CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE84B87-DB42-4546-8A43-444022102CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE84B87-DB42-4546-8A43-444022102CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE84B87-DB42-4546-8A43-444022102CB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C2D80B7-FB73-479E-9A12-10EC4E8AB40F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2D80B7-FB73-479E-9A12-10EC4E8AB40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2D80B7-FB73-479E-9A12-10EC4E8AB40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2D80B7-FB73-479E-9A12-10EC4E8AB40F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2CE515-A7A9-471B-B05D-26913D907FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2CE515-A7A9-471B-B05D-26913D907FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2CE515-A7A9-471B-B05D-26913D907FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2CE515-A7A9-471B-B05D-26913D907FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

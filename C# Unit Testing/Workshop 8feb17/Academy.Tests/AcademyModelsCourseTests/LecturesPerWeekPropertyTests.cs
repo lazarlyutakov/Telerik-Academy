@@ -1,0 +1,38 @@
+﻿using Academy.Models;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Academy.Tests.AcademyModelsCourseTests
+{
+    [TestFixture]
+    public class LecturesPerWeekPropertyTests
+    {
+        [Test]
+        public void LecturesPerWeekProperty_ShouldThrowAnException_WhenInvalidValuePassed()
+        {
+            Assert.Throws<ArgumentException>(() => new Course("OOP", 20, new DateTime(2016, 10, 10), new DateTime(2016, 11, 11)));
+        }
+
+        [Test]
+        public void LecturesPerWeekPropertyy_ShouldNotThrowException_WhenValidValuePassed()
+        {
+            //Arrange
+            var sut = new Course("OOP", 2, new DateTime(2016, 10, 10), new DateTime(2016, 11, 11));
+
+        }
+
+        [Test]
+        public void LecturesPerWeekProperty_ShouldAssignValue_WhenValidValueIsPassed()
+        {
+            var sut = new Course("OOP", 2, new DateTime(2016, 10, 10), new DateTime(2016, 11, 11));
+            var tt = sut.Name;
+
+            Assert.AreEqual("OOP", sut.Name);
+        }
+
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Click to see Event Properties in the Console</h1>
+    <button class = 'vutton' id = 'button'>Click me!</button>
+
+    <script type = 'text/javascript'>
+      var button = document.getElementById('button');
+
+      button.addEventListener('click', function(e){
+          e = e || window.event;
+
+          console.log('Mouse coordinates');
+          console.log(e.clientsX);
+          console.log(e.clientY);
+
+          console.log('Event target');
+          var currentTarget = e.target || e.srcElement;
+          console.log(currentTarget);
+
+          console.log('Event type:');
+          console.log(e.type);
+
+          console.log('Whole event object');
+          console.log(e);
+      }, false);
+    
+    </script>
+    
+</body>
+</html>

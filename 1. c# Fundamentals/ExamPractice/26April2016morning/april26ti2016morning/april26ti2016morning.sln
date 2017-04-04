@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutatntSquirelss", "MutatntSquirelss\MutatntSquirelss.csproj", "{B1D155EB-BB23-4C71-8EB2-5EC74C21A5D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sppeds", "ConsoleApplication1\Sppeds.csproj", "{396F38F1-2CE0-4FB2-AD8B-439F802219B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sumOfEvenDivisors", "sumOfEvenDivisors\sumOfEvenDivisors.csproj", "{49A4C7DA-5F1F-47EB-8474-3A48771BC78E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1D155EB-BB23-4C71-8EB2-5EC74C21A5D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D155EB-BB23-4C71-8EB2-5EC74C21A5D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D155EB-BB23-4C71-8EB2-5EC74C21A5D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D155EB-BB23-4C71-8EB2-5EC74C21A5D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{396F38F1-2CE0-4FB2-AD8B-439F802219B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{396F38F1-2CE0-4FB2-AD8B-439F802219B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{396F38F1-2CE0-4FB2-AD8B-439F802219B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{396F38F1-2CE0-4FB2-AD8B-439F802219B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A4C7DA-5F1F-47EB-8474-3A48771BC78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A4C7DA-5F1F-47EB-8474-3A48771BC78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A4C7DA-5F1F-47EB-8474-3A48771BC78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A4C7DA-5F1F-47EB-8474-3A48771BC78E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

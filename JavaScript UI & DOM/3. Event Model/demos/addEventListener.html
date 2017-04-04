@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Event Model - DOM element 'addEventListener' function</h1>
+    <a id = '1' href = '#' class = 'button'>Button</a>
+    <a id = '2' href = '#' class = 'button'>Button</a>
+    <a id = '3' href = '#' class = 'button'>Button</a>
+    <a id = '4' href = '#' class = 'button'>Button</a>
+
+    <script>
+        function onBodyLoaded(){
+            console.log('Body loaded');
+            var onButtonClick = function(){
+                alert('Button #' + this.id + 'clicked');
+            };
+
+            var buttons = document.getElementsByTagName('a');
+
+            for(var i = 0, len = buttons.length; i < len ; i += 1) {
+                buttons[i].addEventListener('click', onButtonClick);
+            }
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Printing", "Printing\Printing.csproj", "{5F9EE868-4327-4A72-9E4F-43B3EA41AEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "textToNumber", "textToNumber\textToNumber.csproj", "{247F52A4-D505-4ECA-9AB0-8E67951B8A92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "saddyKopper - moe - ne raboti", "saddyKopper\saddyKopper - moe - ne raboti.csproj", "{244D69C3-3F6E-4951-8825-AC6F21A1287A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "saddyKopper-raboteshta", "saddyKopper-raboteshta\saddyKopper-raboteshta.csproj", "{F879A4C6-A6DC-48E9-A362-E01484DD6B3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F9EE868-4327-4A72-9E4F-43B3EA41AEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9EE868-4327-4A72-9E4F-43B3EA41AEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9EE868-4327-4A72-9E4F-43B3EA41AEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9EE868-4327-4A72-9E4F-43B3EA41AEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247F52A4-D505-4ECA-9AB0-8E67951B8A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247F52A4-D505-4ECA-9AB0-8E67951B8A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247F52A4-D505-4ECA-9AB0-8E67951B8A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247F52A4-D505-4ECA-9AB0-8E67951B8A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{244D69C3-3F6E-4951-8825-AC6F21A1287A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{244D69C3-3F6E-4951-8825-AC6F21A1287A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{244D69C3-3F6E-4951-8825-AC6F21A1287A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{244D69C3-3F6E-4951-8825-AC6F21A1287A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F879A4C6-A6DC-48E9-A362-E01484DD6B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F879A4C6-A6DC-48E9-A362-E01484DD6B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F879A4C6-A6DC-48E9-A362-E01484DD6B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F879A4C6-A6DC-48E9-A362-E01484DD6B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

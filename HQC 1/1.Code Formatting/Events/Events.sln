@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FormattedCodes", "FormattedCodes", "{4B82F1CE-EB16-413B-800F-0E7C45603749}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{82F51498-42C1-4A18-9C64-88EFBA644D6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsFormatted", "EventsFormatted\EventsFormatted.csproj", "{D6F925F7-5898-4B66-AC95-5D6C3E4B4C7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F925F7-5898-4B66-AC95-5D6C3E4B4C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F925F7-5898-4B66-AC95-5D6C3E4B4C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F925F7-5898-4B66-AC95-5D6C3E4B4C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F925F7-5898-4B66-AC95-5D6C3E4B4C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82F51498-42C1-4A18-9C64-88EFBA644D6F} = {4B82F1CE-EB16-413B-800F-0E7C45603749}
+		{D6F925F7-5898-4B66-AC95-5D6C3E4B4C7F} = {82F51498-42C1-4A18-9C64-88EFBA644D6F}
+	EndGlobalSection
+EndGlobal

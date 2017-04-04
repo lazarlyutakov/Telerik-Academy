@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload='onBodyLoad()'>
+    <div>
+        <section>
+            <div>
+                <div>
+                    <a class='button' href='#'>Click Me</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function onClick(){
+            console.log(this.nodeName);
+        }
+
+        function onZBodyLoad(){
+            var element = document.body;
+            while(element){
+                element.addEventListener('click', onClick, false);
+                element = element.firstElementChild;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+canvas{
+    position: absolute
+}
+
+#player-canvas{
+    z-index : 10
+}
+
+#pokeball-canvas{
+    z-index : 5
+}
+
+#pokeball-rolling{
+    border-radius: 50
+}

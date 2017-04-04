@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='text'>tekst
+    </div>
+
+    <script>
+        let text = document.getElementById('text');
+
+        text.innerHTML = 'Hello';
+        text.style.color = 'red';
+        console.log(text.id);
+
+        function makeBig() {
+            text.style.fontSize = '32px';
+            text.style.color = 'blue';
+            setTimeout(makeSmall, 1000);
+        }
+
+        function makeSmall() {
+            text.style.fontSize = '22px';
+            text.style.color = 'red';
+            setTimeout(makeBig, 1000);
+        }
+
+        makeBig();
+    </script>
+</body>
+
+</html>
