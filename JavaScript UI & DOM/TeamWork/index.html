@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caipirinha Defender</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <!--CANVAS-->
+    <canvas id="background-canvas"></canvas>
+    <canvas id="menu-canvas" width="1024" height="600"></canvas>
+    <canvas id="player-canvas"></canvas>
+    <canvas id="enemy-canvas"></canvas>
+    <canvas id="rocket-canvas"></canvas>
+    <canvas id="ball-canvas"></canvas>
+    <canvas id="cannon-canvas"></canvas>
+    <!--SVG-->
+    <svg id="cannon-balls-svg" xmlns="http://www.w3.org/2000/svg">
+        <!-- Create the board. -->
+        <!--width="1024" height="600"-->
+        <!--<rect x="1" y="1" width="1024" height="600" fill="thistle" id="bpard" />-->
+        <!-- Create the ball. -->
+        <!--<circle cx="300" cy="300" r="3" fill="orange" id="ball" />-->
+    </svg>
+
+
+    <!--IMAGES-->
+    <img src="./images/backgrounds/background-menu.jpg" id="menu-background" class="sprites">
+    <img src="./images/menu/play.png" width="128" height="80" alt="play-image" id="play-image" class="sprites">
+    <img src="./images/menu/instructions.png" id="instructions-image" class="sprites">
+
+    <!--BACKGROUNDS-->
+    <img src="./images/backgrounds/background-1.png" id="background-1" class="sprites">
+    <img src="./images/backgrounds/background-2.png" id="background-2" class="sprites">
+    <img src="./images/backgrounds/background-3.png" id="background-3" class="sprites">
+    <img src="./images/backgrounds/background-4.png" id="background-4" class="sprites">
+    <img src="./images/backgrounds/background-5.png" id="background-5" class="sprites">
+
+    <!--ENEMIES-->
+    <img src="./images/enemies/enemy-1.png" id="enemy-sprite-1" class="sprites">
+    <img src="./images/enemies/enemy-2.png" id="enemy-sprite-2" class="sprites">
+    <img src="./images/enemies/enemy-3.png" id="enemy-sprite-3" class="sprites">
+    <img src="./images/enemies/enemy-4.png" id="enemy-sprite-4" class="sprites">
+    <img src="./images/enemies/enemy-5.png" id="enemy-sprite-5" class="sprites">
+
+    <!--images class "sprites" to use main.css-->
+    <img src="./images/game-over.png" id="game-over">
+    <img src="./images/game-win.png" id="game-win">
+    <img src="./images/rocketForward.png" id="rocketForward" class="sprites">
+    <img src="./images/rocketBackward.png" id="rocketBackward" class="sprites">
+    <img src="./images/player/straightMove.png" id="plane-spriteStraight" class="sprites">
+    <img src="./images/player/leftMove.png" id="plane-spriteLeft" class="sprites">
+    <img src="./images/player/rightMove.png" id="plane-spriteRight" class="sprites">
+    <img src="./images/player/backwardMove.png" id="plane-spriteBackward" class="sprites">
+    <img src="./images/player/rightBackwardMove.png" id="plane-spriteRigthBackward" class="sprites">
+    <img src="./images/player/leftBackwardMove.png" id="plane-spriteLeftBackward" class="sprites">
+    <img src="./images/enemies/cannon-1.png" id="cannon-sprite-1" class="sprites">
+    <img src="./images/enemies/cannon-2.png" id="cannon-sprite-2" class="sprites">
+    <img src="./images/enemies/cannon-3.png" id="cannon-sprite-3" class="sprites">
+    <img src="./images/player/playerCollision.png" id="plane-collision" class="sprites">
+    <img src="./images/enemies/enemy-3.png" id="enemy-sprite-3" class="sprites">
+    <img src="./images/cannon-ball.png" id="enemy-fire" class="sprites">
+
+    <!--SOUNDS-->
+    <audio id="blast" src="./sounds/Blast-SoundBible.com-2068539061.mp3" hidden />
+    <audio id="explosion" src="./sounds/Explosion-SoundBible.com-2019248186.mp3" hidden />
+
+
+    <!--SCRIPTS-->
+    <script src="./library/CanvasInput.js"></script>
+    <script src="./library/d3.min.js"></script>
+
+    <script src="./javascript/backgroundGenerator.js"></script>
+    <script src="./javascript/spritesGenerator.js"></script>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/moveElements.js"></script>
+    <script src="./javascript/spawnEnemies.js"></script>
+    <script src="./javascript/LVL1Boss.js"></script>
+
+    <script>
+        window.addEventListener("load", startGame);
+        // startGame();
+        // backGroundLoop();
+    </script>
+</body>
+
+</html>
