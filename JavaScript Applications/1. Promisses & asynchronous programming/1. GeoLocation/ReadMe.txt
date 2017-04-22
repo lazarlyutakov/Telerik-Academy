@@ -1,0 +1,1 @@
+Install local live server for proper operation in Chrome.
