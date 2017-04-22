@@ -1,0 +1,3 @@
+The bottleneck is in OrbitCalculator class -> EarthRotation method -> lines 96-99 ( including ).
+We do not need the loop.
+Instead, we could perform a simple, one time, math operation : EarthRotationAngle = (360 * Days) / EarthRotationPeriod;
