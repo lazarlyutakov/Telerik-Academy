@@ -5,16 +5,32 @@ namespace GameFifteen.Models
 {
     public class Matrix : IMatrix
     {
+        private int matrixSize;
         private int[] vertical = { 1, 1, 1, 0, -1, -1, -1, 0 };
         private int[] horizontal = { 1, 0, -1, -1, -1, 0, 1, 1 };
 
         public Matrix(int matrixSize)
         {
+            this.MatrixSize = matrixSize;
             this.MatrixToPrint = new int[matrixSize, matrixSize];
             this.AmountOfNumbers = 1;
         }
 
-        public int MatrixSize { get; set; }
+        public int MatrixSize
+        {
+            get
+            {
+                return this.matrixSize;
+            }
+            set
+            {
+                if (value < 1)
+                {
+                    throw new ArgumentOutOfRangeException("MatrixSize must be positive integer! ");
+                }
+                this.MatrixSize = value;
+            }
+        }
 
         public int[,] MatrixToPrint { get; set; }
 

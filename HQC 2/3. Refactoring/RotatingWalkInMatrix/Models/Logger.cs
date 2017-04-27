@@ -3,7 +3,7 @@ using System;
 
 namespace GameFifteen.Models
 {
-    internal class Logger : ILogger
+    public class Logger : ILogger
     {
         public void Write(string message)
         {

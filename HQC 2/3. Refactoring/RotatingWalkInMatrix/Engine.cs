@@ -2,8 +2,10 @@
 
 namespace GameFifteen
 {
-    internal class Engine
+    public class Engine
     {
+        private int matrixSize;
+
         public Engine(int matrixSize)
         {
             this.MatrixSize = matrixSize;
