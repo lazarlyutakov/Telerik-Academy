@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolSystem.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace SchoolSystem.Contracts
 {
     public interface IStudent
     {
-        //string FirstName { get; set; }
-        //string LastName { get; set; }
-        //string Grade { get; set; }
-        //string Mark { get; set; }
+        string FirstName { get; }
+        string LastName { get; }
+        Grade Grade { get; }
+        List<Mark> Mark { get; }
 
         string ListMarks();
     }

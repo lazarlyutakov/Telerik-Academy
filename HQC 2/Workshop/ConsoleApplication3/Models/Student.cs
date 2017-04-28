@@ -7,7 +7,7 @@ using SchoolSystem.Contracts;
 
 namespace SchoolSystem.Models
 {
-    public class Student : IStudent
+    internal class Student : IStudent
     {
         private string firstName;
         private string lastName;                
@@ -17,10 +17,35 @@ namespace SchoolSystem.Models
 
         public Student(string firstName, string lastName, Grade grade)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Grade = grade;
-            Mark = new List<Mark>();
+            if (firstName.Length < 2 || firstName.Length > 31 || !Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
+            {
+                throw new ArgumentOutOfRangeException("The first name must be between 1 and 31 symbols");
+            }
+            else
+            {
+                this.firstName = firstName;
+            }
+
+            if (lastName.Length < 2 || lastName.Length > 31 || !Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
+            {
+                throw new ArgumentOutOfRangeException("The last name must be between 1 and 31 symbols");
+            }
+            else
+            {
+                this.lastName = lastName;
+            }
+
+            this.grade = grade;
+
+            if (mark.Count > 20)
+            {
+                throw new ArgumentOutOfRangeException("The maximum amount of marks is 20!");
+            }
+            else
+            {
+                mark = new List<Mark>();
+            }
+            
         }
 
         public string FirstName
@@ -28,15 +53,6 @@ namespace SchoolSystem.Models
             get
             {
                 return this.firstName;
-            }
-           private set
-            {
-                if (value.Length < 2 || value.Length > 31 || !Regex.IsMatch(value, @"^[a-zA-Z]+$"))
-                {
-                    throw new ArgumentOutOfRangeException("The first name must be between 1 and 31 symbols");
-                }
-
-                this.firstName = value;
             }
         }
 
@@ -46,33 +62,15 @@ namespace SchoolSystem.Models
             {
                 return this.lastName;
             }
-            private set
-            {
-                if (value.Length < 2 || value.Length > 31 || !Regex.IsMatch(value, @"^[a-zA-Z]+$"))
-                {
-                    throw new ArgumentOutOfRangeException("The last name must be between 1 and 31 symbols");
-                }
-
-                this.lastName = value;
-            }
         }
 
-        public Grade Grade { get; private set; }
+        public Grade Grade { get; }
 
         public List<Mark> Mark
         {
             get
             {
                 return this.mark;
-            }
-            private set
-            {
-                if (value.Count > 20)
-                {
-                    throw new ArgumentOutOfRangeException("The maximum amount of grades is 20!");
-                }
-
-                this.mark = value;
             }
         }
 

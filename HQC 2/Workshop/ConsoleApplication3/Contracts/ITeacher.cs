@@ -9,9 +9,9 @@ namespace SchoolSystem.Contracts
 {
     public interface ITeacher
     {
-        //string FirstName { get; set; }
-        //string LastName { get; set; }
-        //string Subject { get; set; }
+        string FirstName { get; }
+        string LastName { get; }
+        Subject Subject { get; }
 
         void AddMark(Subject subject, float mark);
 

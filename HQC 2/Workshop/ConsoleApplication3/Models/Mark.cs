@@ -1,10 +1,10 @@
 ﻿using System;
 using SchoolSystem.Enums;
-
+using SchoolSystem.Contracts;
 
 namespace SchoolSystem
 {
-    public class Mark
+    internal class Mark : IMark
     {
         private float markValue;
         private Subject subject;
@@ -12,7 +12,24 @@ namespace SchoolSystem
         public Mark(Subject subject, float markValue)
         {
             this.subject = subject;
-            this.Value = markValue;
+
+            if (markValue < 2 || markValue > 6)
+            {
+                throw new ArgumentOutOfRangeException("The value of the mark must be between 2 and six");
+            }
+            else
+            {
+                this.markValue = markValue;
+            }
+            
+        }
+
+        public Subject Subject
+        {
+            get
+            {
+                return this.subject;
+            }
         }
 
         public float Value
@@ -23,10 +40,7 @@ namespace SchoolSystem
             }
             set
             {
-                if (value < 2 || value > 6)
-                {
-                    throw new ArgumentOutOfRangeException("The value of the mark must be between 2 and six");
-                }
+                
                 this.markValue = value;
             }
         }                    

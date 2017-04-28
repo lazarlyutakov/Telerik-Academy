@@ -9,7 +9,7 @@ namespace SchoolSystem.Contracts
 {
     public interface IMark
     {
-        Subject Subject { get; set; }
-        float Value { get; set; }
+        Subject Subject { get; }
+        float Value { get; }
     }
 }

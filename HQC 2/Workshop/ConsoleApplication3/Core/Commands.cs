@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem.Core
 {
-    public class Commands : ICommand
+    internal class Commands : ICommand
     {
 
         public string Execute(IList<string> parameters)

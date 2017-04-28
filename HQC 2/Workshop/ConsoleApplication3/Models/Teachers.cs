@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using SchoolSystem.Enums;
 using SchoolSystem.Contracts;
+using System.Text.RegularExpressions;
 
 namespace SchoolSystem.Models
 {
-    public class Teachers : ITeacher
+    internal class Teachers : ITeacher
     {
         private string firstName;
         private string lastName;
@@ -16,8 +17,24 @@ namespace SchoolSystem.Models
                       
         public Teachers(string firstName, string lastName, Subject subject)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            if (firstName.Length < 2 || firstName.Length > 31 || !Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
+            {
+                throw new ArgumentOutOfRangeException("The first name must be between 1 and 31 symbols");
+            }
+            else
+            {
+                this.firstName = firstName;
+            }
+
+            if (lastName.Length < 2 || lastName.Length > 31 || !Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
+            {
+                throw new ArgumentOutOfRangeException("The last name must be between 1 and 31 symbols");
+            }
+            else
+            {
+                this.lastName = lastName;
+            }
+            
             this.subject = subject;
         }
 
@@ -27,15 +44,6 @@ namespace SchoolSystem.Models
             {
                 return this.firstName;
             }
-            private set
-            {
-                if (value.Length < 2 || value.Length > 31 || !Regex.IsMatch(value, @"^[a-zA-Z]+$"))
-                {
-                    throw new ArgumentOutOfRangeException("The first name must be between 1 and 31 symbols");
-                }
-
-                this.firstName = value;
-            }
         }
 
         public string LastName
@@ -44,14 +52,13 @@ namespace SchoolSystem.Models
             {
                 return this.lastName;
             }
-            private set
-            {
-                if (value.Length < 2 || value.Length > 31 || !Regex.IsMatch(value, @"^[a-zA-Z]+$"))
-                {
-                    throw new ArgumentOutOfRangeException("The last name must be between 1 and 31 symbols");
-                }
+        }
 
-                this.lastName = value;
+        public Subject Subject
+        {
+            get
+            {
+                return this.subject;
             }
         }
 
