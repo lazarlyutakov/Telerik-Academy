@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApplication3
+﻿namespace SchoolSystem.Enums
 {
     public enum Grade
     {
+        First = 1,
+        Second = 2,
+        Third = 3,
+        Fourth = 4,
+        Figth = 5,
+        Sixt = 6,
+        Seventh = 7,
         Eighth = 8,
         Ninth = 9,
         Tenth = 10,

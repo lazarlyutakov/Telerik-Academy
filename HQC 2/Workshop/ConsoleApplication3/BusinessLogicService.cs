@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication3
+namespace SchoolSystem
 {
     // I am not sure if we need this, but too scared to delete. 
     internal class BusinessLogicService

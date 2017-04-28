@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApplication3
+namespace SchoolSystem
 {
     public class CreateTeacherCommand : ICommand
     {
@@ -21,7 +21,7 @@ namespace ConsoleApplication3
         }
     }
 
-    class CreateStudentCommand
+    public class CreateStudentCommand
     {
         private static int id = 0;
 
