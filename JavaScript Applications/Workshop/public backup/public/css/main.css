@@ -1,0 +1,19 @@
+
+#app-container{
+    width: 600px;
+    height: 600px;
+    padding: 10px;
+}
+
+
+header{
+    padding: 20px;
+}
+
+li{
+    list-style: none;
+}
+
+.hidden{
+    display: none;
+}
