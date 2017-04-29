@@ -4,35 +4,35 @@ using SchoolSystem.Contracts;
 
 namespace SchoolSystem
 {
-    public class CreateTeacherCommand : ICommand
-    {
-        public string Execute(IList<string> para)
-        {
-            // TODO: too drunk, implement later
-            throw new NotImplementedException();
-        }
-    }
+    //public class CreateTeacherCommand : ICommand
+    //{
+    //    public string Execute(IList<string> para)
+    //    {
+    //        // TODO: too drunk, implement later
+    //        throw new NotImplementedException();
+    //    }
+    //}
 
-    public class RemoveStudentCommand : ICommand
-    {
-        public string Execute(IList<string> paras)
-        {
-            Engine.students.Remove(int.Parse(paras[0]));
-            return $"Student with ID {int.Parse(paras[0])} was sucessfully removed.";
-        }
-    }
+    //public class RemoveStudentCommand : ICommand
+    //{
+    //    public string Execute(IList<string> paras)
+    //    {
+    //        Engine.students.Remove(int.Parse(paras[0]));
+    //        return $"Student with ID {int.Parse(paras[0])} was sucessfully removed.";
+    //    }
+    //}
 
-    public class CreateStudentCommand
-    {
-        private static int id = 0;
+    //public class CreateStudentCommand
+    //{
+    //    private static int id = 0;
 
-        public string Execute(IList<string> para)
-        {
-            Engine.students.Add(id, new Student(para[0], para[1], (Grade)int.Parse(para[2])));
+    //    public string Execute(IList<string> para)
+    //    {
+    //        Engine.students.Add(id, new Student(para[0], para[1], (Grade)int.Parse(para[2])));
 
-            return $"A new student with name {para[0]} {para[1]}, grade {(Grade)int.Parse(para[2])} and ID {id++} was created.";
-        }
-    }
+    //        return $"A new student with name {para[0]} {para[1]}, grade {(Grade)int.Parse(para[2])} and ID {id++} was created.";
+    //    }
+    //}
 
     class StudentListMarksCommand : ICommand
     {

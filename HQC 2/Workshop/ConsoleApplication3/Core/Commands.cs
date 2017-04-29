@@ -11,11 +11,6 @@ namespace SchoolSystem.Core
 {
     internal class Commands : ICommand
     {
-        public string Execute(IList<string> parameters)
-        {
-            return "";
-        }
-
         public string CreateStudent(string firstName, string lastName, Grade grade)
         {
             int id = 0;
@@ -45,7 +40,5 @@ namespace SchoolSystem.Core
             PersonnelArchive.Teachers.Remove(teacherId);
             return $"Student with ID {teacherId} was sucessfully removed.";
         }
-
-
     }
 }

@@ -27,22 +27,9 @@ namespace SchoolSystem
             var service = new BusinessLogicService();
             service.Execute(padhana);
 
-            //raboti
-            //var cmd = new Commands();
-            //var ter = cmd.CreateTeacher("ivan", "ivanov", Enums.Subject.Bulgarian);
-
-            //Console.WriteLine(PersonnelArchive.Teachers.Count);
         }
     }
-
-    public class ConsoleReaderProvider
-    {
-        // TODO: make ConsoleReaderProvider implement IReader
-        public string PadhanaLine()
-        {
-            return Console.ReadLine();
-        }
-    }
+    
 
     public class Engine
     {
