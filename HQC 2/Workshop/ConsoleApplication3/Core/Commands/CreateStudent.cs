@@ -1,15 +1,11 @@
 ﻿using SchoolSystem.Contracts;
 using SchoolSystem.Enums;
 using SchoolSystem.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolSystem.Core.Commands
 {
-    internal class CreateStudentCommand : ICommand
+    internal class CreateStudent : ICommand
     {
         private static int studentId = 0;
 
@@ -20,9 +16,9 @@ namespace SchoolSystem.Core.Commands
             Grade grade = (Grade)int.Parse(parameters[2]);
 
             var student = new Student(firstName, lastName, grade);
+            PersonnelArchive.Students.Add(studentId, student);
 
             return $"A new student with name {firstName} {lastName}, grade {grade} and ID {studentId++} was created.";
-        }
-        
+        }       
     }
 }

@@ -1,16 +1,12 @@
 ﻿using SchoolSystem.Contracts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolSystem.Core
 {
     internal class Engine
     {
-        private const string END_PROCESS_COMMAND = "End";
-        private const string NULL_EXCEPTION_MESSAGE = "Make an input! The value cannot be null!";
+        private const string EndProcessCOmmand = "End";
+        private const string NullExceptionMEssage = "Make an input! The value cannot be null!";
 
         private IReader reader;
         private IWriter writer;
@@ -20,17 +16,17 @@ namespace SchoolSystem.Core
         {
             if (reader == null)
             {
-                throw new ArgumentOutOfRangeException(NULL_EXCEPTION_MESSAGE);
+                throw new ArgumentOutOfRangeException(NullExceptionMEssage);
             }
 
             if (writer == null)
             {
-                throw new ArgumentOutOfRangeException(NULL_EXCEPTION_MESSAGE);
+                throw new ArgumentOutOfRangeException(NullExceptionMEssage);
             }
 
             if (parser == null)
             {
-                throw new ArgumentOutOfRangeException(NULL_EXCEPTION_MESSAGE);
+                throw new ArgumentOutOfRangeException(NullExceptionMEssage);
             }
 
             this.reader = reader;
@@ -46,7 +42,7 @@ namespace SchoolSystem.Core
                 {
                     var commandAsString = this.reader.ReadLine();
 
-                    if (commandAsString == END_PROCESS_COMMAND)
+                    if (commandAsString == EndProcessCOmmand)
                     {
                         break;
                     }

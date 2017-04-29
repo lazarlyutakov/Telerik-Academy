@@ -1,6 +1,6 @@
 ﻿using System;
-using SchoolSystem.Enums;
 using SchoolSystem.Contracts;
+using SchoolSystem.Enums;
 
 namespace SchoolSystem
 {
@@ -20,8 +20,7 @@ namespace SchoolSystem
             else
             {
                 this.markValue = markValue;
-            }
-            
+            }           
         }
 
         public Subject Subject
@@ -38,9 +37,9 @@ namespace SchoolSystem
             {
                 return this.markValue;
             }
+
             set
-            {
-                
+            {                
                 this.markValue = value;
             }
         }                    

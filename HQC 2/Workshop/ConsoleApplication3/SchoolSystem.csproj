@@ -58,14 +58,17 @@
     <Compile Include="Contracts\IStudent.cs" />
     <Compile Include="Contracts\ITeacher.cs" />
     <Compile Include="Contracts\IWriter.cs" />
-    <Compile Include="Core\Commands.cs" />
     <Compile Include="Contracts\ICommand.cs" />
-    <Compile Include="Core\Commands\CreateStudentCommand.cs" />
+    <Compile Include="Core\Commands\CreateStudent.cs" />
+    <Compile Include="Core\Commands\CreateTeacher.cs" />
+    <Compile Include="Core\Commands\RemoveStudent.cs" />
+    <Compile Include="Core\Commands\RemoveTeacher.cs" />
+    <Compile Include="Core\Commands\StudentListMarks.cs" />
+    <Compile Include="Core\Commands\TeacherAddMark.cs" />
     <Compile Include="Core\Engine.cs" />
-    <Compile Include="CreateStudentCommand.cs" />
     <Compile Include="PersonnelArchive.cs" />
-    <Compile Include="Providers\CommandParserProvider.cs" />
-    <Compile Include="Providers\ConsoleReaderProvider.cs" />
+    <Compile Include="Providers\CommandParser.cs" />
+    <Compile Include="Providers\ConsoleReader.cs" />
     <Compile Include="Providers\ConsoleWriter.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Enums\Grade.cs" />
@@ -74,7 +77,6 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Teachers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BusinessLogicService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

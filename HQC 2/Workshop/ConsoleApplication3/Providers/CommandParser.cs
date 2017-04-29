@@ -35,7 +35,7 @@ namespace SchoolSystem.Providers
                    .Where(type => type.Name.ToLower().Contains(commandName.ToLower()))
                    .SingleOrDefault();
 
-            if(commandTypeInfo == null)
+            if (commandTypeInfo == null)
             {
                 throw new ArgumentException("Command not found");
             }

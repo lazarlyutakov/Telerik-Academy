@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
 using SchoolSystem.Enums;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using SchoolSystem.Contracts;
 
 namespace SchoolSystem.Models
 {
     internal class Student : IStudent
     {
+        private const int MIN_NAME_LENGTH = 2;
+        private const int MAX_NAME_LENGTH = 31;
+        private const int MAX_AMOUNT_OF_MARKS = 20;
+
         private string firstName;
         private string lastName;
         private Grade grade;
         private List<Mark> mark;
 
-
         public Student(string firstName, string lastName, Grade grade)
         {
-            if (firstName.Length < 2 || firstName.Length > 31 || !Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
+            if (firstName.Length < MIN_NAME_LENGTH || firstName.Length > MAX_NAME_LENGTH || !Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
             {
                 throw new ArgumentOutOfRangeException("The first name must be between 2 and 31 symbols");
             }
@@ -26,7 +30,7 @@ namespace SchoolSystem.Models
                 this.firstName = firstName;
             }
 
-            if (lastName.Length < 2 || lastName.Length > 31 || !Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
+            if (lastName.Length < MIN_NAME_LENGTH || lastName.Length > MAX_NAME_LENGTH || !Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
             {
                 throw new ArgumentOutOfRangeException("The last name must be between 2 and 31 symbols");
             }
@@ -37,15 +41,14 @@ namespace SchoolSystem.Models
 
             this.grade = grade;
 
-            if (mark.Count > 20)
+            if (this.mark.Count > MAX_AMOUNT_OF_MARKS)
             {
                 throw new ArgumentOutOfRangeException("The maximum amount of marks is 20!");
             }
             else
             {
-                mark = new List<Mark>();
+                this.mark = new List<Mark>();
             }
-
         }
 
         public string FirstName
@@ -76,9 +79,21 @@ namespace SchoolSystem.Models
 
         public string ListMarks()
         {
-            var listOfMarks = this.mark.Select(m => $"{m.Subject} => {m.Value}").ToList();
+            if (this.Mark.Count == 0)
+            {
+                return "The student has no marks.";
+            }
 
-            return string.Join("\n", listOfMarks);
+            var builder = new StringBuilder();
+            builder.AppendLine("The student has these marks:");
+
+            var marksAsString = this.Mark
+                .Select(m => $"{m.Subject} => {m.Value}")
+                .ToList();
+
+            marksAsString.ForEach(m => builder.AppendLine(m));
+
+            return builder.ToString();
         }
     }
 }
