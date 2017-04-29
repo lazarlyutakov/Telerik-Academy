@@ -13,7 +13,7 @@ namespace SchoolSystem.Contracts
         string LastName { get; }
         Subject Subject { get; }
 
-        void AddMark(Subject subject, float mark);
+        void AddMark(IStudent student, float mark);
 
     }
 }

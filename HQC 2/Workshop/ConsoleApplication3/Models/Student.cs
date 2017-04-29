@@ -10,7 +10,7 @@ namespace SchoolSystem.Models
     internal class Student : IStudent
     {
         private string firstName;
-        private string lastName;                
+        private string lastName;
         private Grade grade;
         private List<Mark> mark;
 
@@ -19,7 +19,7 @@ namespace SchoolSystem.Models
         {
             if (firstName.Length < 2 || firstName.Length > 31 || !Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
             {
-                throw new ArgumentOutOfRangeException("The first name must be between 1 and 31 symbols");
+                throw new ArgumentOutOfRangeException("The first name must be between 2 and 31 symbols");
             }
             else
             {
@@ -28,7 +28,7 @@ namespace SchoolSystem.Models
 
             if (lastName.Length < 2 || lastName.Length > 31 || !Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
             {
-                throw new ArgumentOutOfRangeException("The last name must be between 1 and 31 symbols");
+                throw new ArgumentOutOfRangeException("The last name must be between 2 and 31 symbols");
             }
             else
             {
@@ -45,7 +45,7 @@ namespace SchoolSystem.Models
             {
                 mark = new List<Mark>();
             }
-            
+
         }
 
         public string FirstName
@@ -76,7 +76,7 @@ namespace SchoolSystem.Models
 
         public string ListMarks()
         {
-            var listOfMarks = this.mark.Select(m => $"{m.subject} => {m.value}").ToList();
+            var listOfMarks = this.mark.Select(m => $"{m.Subject} => {m.Value}").ToList();
 
             return string.Join("\n", listOfMarks);
         }

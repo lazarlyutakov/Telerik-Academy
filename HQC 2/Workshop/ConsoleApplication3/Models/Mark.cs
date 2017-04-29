@@ -4,7 +4,7 @@ using SchoolSystem.Contracts;
 
 namespace SchoolSystem
 {
-    internal class Mark : IMark
+    public class Mark : IMark
     {
         private float markValue;
         private Subject subject;

@@ -1,4 +1,5 @@
-﻿using SchoolSystem.Models;
+﻿using SchoolSystem.Core;
+using SchoolSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +15,23 @@ namespace SchoolSystem
     {
         private ConsoleReaderProvider read;
 
-        internal static Dictionary<int, Teachers> Teachers { get; set; } = new Dictionary<int, Teachers>();
+        //internal static Dictionary<int, Teachers> Teachers { get; set; } = new Dictionary<int, Teachers>();
 
-        internal static Dictionary<int, Student> Students { get; set; } = new Dictionary<int, Student>();
+        //internal static Dictionary<int, Student> Students { get; set; } = new Dictionary<int, Student>();
 
        public static void Main()
         {
             // TODO: abstract at leest 2 mor provider like thiso ne
-            var padhana = new ConsoleReaderProvider();
+             var padhana = new ConsoleReaderProvider();
 
             var service = new BusinessLogicService();
             service.Execute(padhana);
+
+            //raboti
+            //var cmd = new Commands();
+            //var ter = cmd.CreateTeacher("ivan", "ivanov", Enums.Subject.Bulgarian);
+
+            //Console.WriteLine(PersonnelArchive.Teachers.Count);
         }
     }
 
@@ -105,6 +112,7 @@ namespace SchoolSystem
 
             Console.Write("\n");
             Thread.Sleep(350);
-        }       
+        }
     }
 }
+

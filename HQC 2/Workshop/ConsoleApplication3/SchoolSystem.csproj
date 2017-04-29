@@ -58,6 +58,7 @@
     <Compile Include="Core\Commands.cs" />
     <Compile Include="Contracts\ICommand.cs" />
     <Compile Include="CreateStudentCommand.cs" />
+    <Compile Include="PersonnelArchive.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Enums\Grade.cs" />
     <Compile Include="Enums\Subject.cs" />

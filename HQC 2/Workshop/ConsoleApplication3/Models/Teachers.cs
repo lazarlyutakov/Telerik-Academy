@@ -62,9 +62,9 @@ namespace SchoolSystem.Models
             }
         }
 
-        public void AddMark(Subject subject, float mark)
+        public void AddMark(IStudent student, float mark)
         {
-            var studentMark = new Mark(subject, mark);
+            var studentMark = new Mark(this.Subject, mark);
             student.Mark.Add(studentMark);
         }
     }

@@ -9,10 +9,10 @@ namespace SchoolSystem
     // I am not sure if we need this, but too scared to delete. 
     internal class BusinessLogicService
     {
-        public void Execute(ConsoleReaderProvider padhana)
+        public void Execute(ConsoleReaderProvider reader)
         {
-            var injan = new Engine(padhana);
-            injan.BrumBrum();
+            var engine = new Engine(reader);
+            engine.BrumBrum();
         }
     }
 }
