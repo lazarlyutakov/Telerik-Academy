@@ -5,16 +5,27 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4Net", "Log4Net\Log4Net.csproj", "{82620D52-D16B-4565-973F-11FEE4F67489}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4template", "T4template\T4template.csproj", "{CE7D34F3-0FBC-4E4C-9CDB-785A611BFC27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Obfuscation|Any CPU = Obfuscation|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{82620D52-D16B-4565-973F-11FEE4F67489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{82620D52-D16B-4565-973F-11FEE4F67489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82620D52-D16B-4565-973F-11FEE4F67489}.Obfuscation|Any CPU.ActiveCfg = Obfuscation|Any CPU
+		{82620D52-D16B-4565-973F-11FEE4F67489}.Obfuscation|Any CPU.Build.0 = Obfuscation|Any CPU
 		{82620D52-D16B-4565-973F-11FEE4F67489}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82620D52-D16B-4565-973F-11FEE4F67489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE7D34F3-0FBC-4E4C-9CDB-785A611BFC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE7D34F3-0FBC-4E4C-9CDB-785A611BFC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE7D34F3-0FBC-4E4C-9CDB-785A611BFC27}.Obfuscation|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7D34F3-0FBC-4E4C-9CDB-785A611BFC27}.Obfuscation|Any CPU.Build.0 = Release|Any CPU
+		{CE7D34F3-0FBC-4E4C-9CDB-785A611BFC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7D34F3-0FBC-4E4C-9CDB-785A611BFC27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

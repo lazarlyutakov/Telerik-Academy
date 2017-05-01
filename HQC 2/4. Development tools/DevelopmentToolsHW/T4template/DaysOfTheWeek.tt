@@ -1,0 +1,21 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+namespace DaysOfTheWeekDemo
+{
+   class WeekDays
+   {
+     <#
+    for (int i = 0; i < 7; i++)
+    {
+			 var day = DateTime.Now.AddDays(i).ToString("dddd"); #>
+			 public string <#= day #> { get; set; }
+        <#
+         }
+	     #>
+    }
+}
