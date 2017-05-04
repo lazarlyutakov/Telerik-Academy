@@ -2,46 +2,27 @@
 using SchoolSystem.Contracts;
 using SchoolSystem.Enums;
 
-namespace SchoolSystem
+namespace ScoolSystem.Models
 {
     public class Mark : IMark
     {
-        private float markValue;
-        private Subject subject;
+        private const float MinMarkValue = 2.0f;
+        private const float MaxMarkValue = 6.0f;
 
         public Mark(Subject subject, float markValue)
         {
-            this.subject = subject;
+            this.Subject = subject;
 
-            if (markValue < 2 || markValue > 6)
+            if (markValue < MinMarkValue || markValue > MaxMarkValue)
             {
-                throw new ArgumentOutOfRangeException("The value of the mark must be between 2 and six");
+                throw new ArgumentOutOfRangeException("The value of the mark must be between 2 and 6!");
             }
-            else
-            {
-                this.markValue = markValue;
-            }           
+
+            this.MarkValue = markValue;
         }
 
-        public Subject Subject
-        {
-            get
-            {
-                return this.subject;
-            }
-        }
+        public Subject Subject { get; }
 
-        public float Value
-        {
-            get
-            {
-                return this.markValue;
-            }
-
-            set
-            {                
-                this.markValue = value;
-            }
-        }                    
+        public float MarkValue { get; }
     }
 }

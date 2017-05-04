@@ -5,13 +5,9 @@ namespace SchoolSystem.Contracts
 {
     public interface IStudent
     {
-        string FirstName { get; }
+        Grade Grade { get; set; }
 
-        string LastName { get; }
-
-        Grade Grade { get; }
-
-        List<Mark> Mark { get; }
+        IList<IMark> Marks { get; }
 
         string ListMarks();
     }

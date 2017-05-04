@@ -1,12 +1,12 @@
 ﻿Bottleneck description: --------------------
-#1: Class Startup -> method WriteLine -> unneccessary loops;
+#1: WriteLine method -> unneccessary loop;
 
 
 Bug reports: --------------------
 Format: #Bug number - Class name - Bug description
 Example: #1 - PartnerBankingService - The variable "money" at line 36 overflows when you try to add more than 2.1 billion dollars.
 --------
-#1 - Grades enumeration : missing grades 1 to 8;
-#2 - Teachers class : AddMark method -> should be passed parameter IStudent instead of Subject
+#1 - Grade - first to seventh grade ( inclusive ) missing;
+#2 - class Teacher - method AddMark -> teacher instead of student;
 #3 -
 #4 - 

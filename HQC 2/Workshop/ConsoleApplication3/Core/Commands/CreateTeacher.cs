@@ -1,6 +1,6 @@
-﻿using SchoolSystem.Contracts;
+﻿using SchoolSystem.Core.Contracts;
 using SchoolSystem.Enums;
-using SchoolSystem.Models;
+using ScoolSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +9,21 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem.Core.Commands
 {
-    internal class CreateTeacher : ICommand
+    public class CreateTeacher : ICommand
     {
-        private static int teacherId;
+        private static int teacherId = 0;
 
         public string Execute(IList<string> parameters)
         {
             string firstName = parameters[0];
             string lastName = parameters[1];
-            string subject = parameters[2];
+            var subject = (Subject)int.Parse(parameters[2]);
 
-            var teacher = new Teachers(firstName, lastName, (Subject)int.Parse(parameters[2]));
-            PersonnelArchive.Teachers.Add(teacherId, teacher);
+            var teacher = new Teacher(firstName, lastName, subject);
 
-            return $"A new teacher with name {firstName} {lastName}, grade {subject} and ID {teacherId++} was created.";
+            PersonellArchive.Teachers.Add(teacherId, teacher);
+
+            return $"A new student with name {firstName} {lastName}, subject {subject} and ID {teacherId++} was created.";
         }
     }
 }

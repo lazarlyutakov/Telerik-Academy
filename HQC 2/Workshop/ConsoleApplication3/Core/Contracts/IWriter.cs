@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolSystem.Contracts
+namespace SchoolSystem.Core.Contracts
 {
     public interface IWriter
     {

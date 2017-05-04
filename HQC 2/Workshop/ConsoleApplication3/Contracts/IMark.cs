@@ -1,9 +1,4 @@
 ﻿using SchoolSystem.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolSystem.Contracts
 {
@@ -11,6 +6,6 @@ namespace SchoolSystem.Contracts
     {
         Subject Subject { get; }
 
-        float Value { get; }
+        float MarkValue { get; }
     }
 }

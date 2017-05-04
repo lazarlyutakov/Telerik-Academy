@@ -1,21 +1,15 @@
 ﻿using SchoolSystem.Core;
-using SchoolSystem.Models;
-using SchoolSystem.Providers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading;
+using SchoolSystem.Core.Providers;
 
 namespace SchoolSystem
 {
     public class Startup
     {
-        public static void Main()
+        static void Main()
         {
-            var reader = new ConsoleReader();
-            var writer = new ConsoleWriter();
-            var parser = new CommandParser();
+            var reader = new Reader();
+            var writer = new Writer();
+            var parser = new Parser();
 
             var engine = new Engine(reader, writer, parser);
             engine.Start();

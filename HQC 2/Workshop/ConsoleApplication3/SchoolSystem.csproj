@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SchoolSystem</RootNamespace>
     <AssemblyName>SchoolSystem</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -38,9 +38,6 @@
     <CodeAnalysisRuleSet>
     </CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,30 +49,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Abstraction\Person.cs" />
     <Compile Include="Contracts\IMark.cs" />
-    <Compile Include="Contracts\IParser.cs" />
-    <Compile Include="Contracts\IReader.cs" />
     <Compile Include="Contracts\IStudent.cs" />
     <Compile Include="Contracts\ITeacher.cs" />
-    <Compile Include="Contracts\IWriter.cs" />
-    <Compile Include="Contracts\ICommand.cs" />
     <Compile Include="Core\Commands\CreateStudent.cs" />
     <Compile Include="Core\Commands\CreateTeacher.cs" />
     <Compile Include="Core\Commands\RemoveStudent.cs" />
     <Compile Include="Core\Commands\RemoveTeacher.cs" />
     <Compile Include="Core\Commands\StudentListMarks.cs" />
     <Compile Include="Core\Commands\TeacherAddMark.cs" />
+    <Compile Include="Core\Contracts\IParser.cs" />
+    <Compile Include="Core\Contracts\IReader.cs" />
+    <Compile Include="Core\Contracts\IWriter.cs" />
     <Compile Include="Core\Engine.cs" />
-    <Compile Include="PersonnelArchive.cs" />
-    <Compile Include="Providers\CommandParser.cs" />
-    <Compile Include="Providers\ConsoleReader.cs" />
-    <Compile Include="Providers\ConsoleWriter.cs" />
-    <Compile Include="Startup.cs" />
-    <Compile Include="Enums\Grade.cs" />
+    <Compile Include="Core\PersonellArchive.cs" />
+    <Compile Include="Core\Providers\Parser.cs" />
+    <Compile Include="Core\Providers\Reader.cs" />
+    <Compile Include="Core\Providers\Writer.cs" />
+    <Compile Include="Enums\Grades.cs" />
+    <Compile Include="Core\Contracts\ICommand.cs" />
     <Compile Include="Enums\Subject.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Models\Mark.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\Teachers.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

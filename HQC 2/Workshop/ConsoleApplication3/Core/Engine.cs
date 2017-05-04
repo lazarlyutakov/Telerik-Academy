@@ -1,37 +1,36 @@
-﻿using SchoolSystem.Contracts;
-using System;
+﻿using System;
+using SchoolSystem.Core.Contracts;
 
 namespace SchoolSystem.Core
 {
-    internal class Engine
+    public class Engine
     {
-        private const string EndProcessCOmmand = "End";
-        private const string NullExceptionMEssage = "Make an input! The value cannot be null!";
+        private const string NullProvidersExceptionMessage = "The provider cannot be null";
 
         private IReader reader;
         private IWriter writer;
         private IParser parser;
 
-        public Engine(IReader reader, IWriter writer, IParser parser)
+        public Engine(IReader readerProvider, IWriter writerProvider, IParser parserProvider)
         {
-            if (reader == null)
+            if (readerProvider == null)
             {
-                throw new ArgumentOutOfRangeException(NullExceptionMEssage);
+                throw new ArgumentNullException($"Reader {NullProvidersExceptionMessage}");
             }
 
-            if (writer == null)
+            if (writerProvider == null)
             {
-                throw new ArgumentOutOfRangeException(NullExceptionMEssage);
+                throw new ArgumentNullException($"Writer {NullProvidersExceptionMessage}");
             }
 
-            if (parser == null)
+            if (parserProvider == null)
             {
-                throw new ArgumentOutOfRangeException(NullExceptionMEssage);
+                throw new ArgumentNullException($"Parser {NullProvidersExceptionMessage}");
             }
 
-            this.reader = reader;
-            this.writer = writer;
-            this.parser = parser;
+            this.reader = readerProvider;
+            this.writer = writerProvider;
+            this.parser = parserProvider;
         }
 
         public void Start()
@@ -40,14 +39,14 @@ namespace SchoolSystem.Core
             {
                 try
                 {
-                    var commandAsString = this.reader.ReadLine();
+                    var command = this.reader.Read();
 
-                    if (commandAsString == EndProcessCOmmand)
+                    if (command == "End")
                     {
                         break;
                     }
 
-                    this.ProcessCommand(commandAsString);
+                    this.ProcessCommand(command);
                 }
                 catch (Exception ex)
                 {
@@ -66,8 +65,8 @@ namespace SchoolSystem.Core
             var command = this.parser.ParseCommand(commandAsString);
             var parameters = this.parser.ParseParameters(commandAsString);
 
-            var executionResult = command.Execute(parameters);
-            this.writer.WriteLine(executionResult);
+            var output = command.Execute(parameters);
+            this.writer.WriteLine(output);
         }
     }
 }

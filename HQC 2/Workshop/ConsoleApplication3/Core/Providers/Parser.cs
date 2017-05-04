@@ -1,14 +1,12 @@
-﻿using SchoolSystem.Contracts;
+﻿using SchoolSystem.Core.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SchoolSystem.Providers
+namespace SchoolSystem.Core.Providers
 {
-    internal class CommandParser : IParser
+    public class Parser : IParser
     {
         public ICommand ParseCommand(string fullCommand)
         {
@@ -21,23 +19,28 @@ namespace SchoolSystem.Providers
 
         public IList<string> ParseParameters(string fullCommand)
         {
-            var splittedCommand = fullCommand.Split(' ').ToList();
-            splittedCommand.RemoveAt(0);
+            var parameters = fullCommand.Split(' ').ToList();
+            parameters.RemoveAt(0);
 
-            return splittedCommand;
+            if (parameters.Count() == 0)
+            {
+                return null;
+            }
+
+            return parameters;
         }
 
         private TypeInfo FindCommand(string commandName)
         {
-            var currentAssembly = this.GetType().GetTypeInfo().Assembly;
+            var currentAssembly = GetType().GetTypeInfo().Assembly;
             var commandTypeInfo = currentAssembly.DefinedTypes
-                   .Where(type => type.ImplementedInterfaces.Any(inter => inter == typeof(ICommand)))
-                   .Where(type => type.Name.ToLower().Contains(commandName.ToLower()))
-                   .SingleOrDefault();
+                .Where(type => type.ImplementedInterfaces.Any(inter => inter == typeof(ICommand)))
+                .Where(type => type.Name.ToLower().Contains(commandName.ToLower()))
+                .FirstOrDefault();
 
             if (commandTypeInfo == null)
             {
-                throw new ArgumentException("Command not found");
+                throw new ArgumentException("The passed command is not found!");
             }
 
             return commandTypeInfo;

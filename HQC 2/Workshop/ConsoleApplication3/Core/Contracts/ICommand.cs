@@ -1,7 +1,6 @@
-﻿using SchoolSystem.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace SchoolSystem.Contracts
+namespace SchoolSystem.Core.Contracts
 {
     public interface ICommand
     {

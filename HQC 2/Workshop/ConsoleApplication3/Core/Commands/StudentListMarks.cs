@@ -1,16 +1,15 @@
-﻿using SchoolSystem.Contracts;
+﻿using SchoolSystem.Core.Contracts;
 using System.Collections.Generic;
 
 namespace SchoolSystem.Core.Commands
 {
-    internal class StudentListMarks : ICommand
+    public class StudentListMarks : ICommand
     {
         public string Execute(IList<string> parameters)
         {
-            int studentsId = int.Parse(parameters[2]);
-            var studentToList = PersonnelArchive.Students[studentsId];
+            int studentsId = int.Parse(parameters[0]);
 
-            return studentToList.ListMarks();
+            return PersonellArchive.Students[studentsId].ListMarks();
         }
     }
 }

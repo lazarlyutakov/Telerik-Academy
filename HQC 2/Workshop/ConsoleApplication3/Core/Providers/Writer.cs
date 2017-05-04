@@ -1,13 +1,13 @@
-﻿using System;
-using SchoolSystem.Contracts;
+﻿using SchoolSystem.Core.Contracts;
+using System;
 
-namespace SchoolSystem.Providers
+namespace SchoolSystem.Core.Providers
 {
-    internal class ConsoleWriter : IWriter
+    public class Writer : IWriter
     {
         public void Write(string message)
         {
-            Console.WriteLine(message);
+            Console.Write(message);
         }
 
         public void WriteLine(string message)

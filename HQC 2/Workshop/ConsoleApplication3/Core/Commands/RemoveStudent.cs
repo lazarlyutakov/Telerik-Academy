@@ -1,16 +1,20 @@
-﻿using SchoolSystem.Contracts;
+﻿using SchoolSystem.Core.Contracts;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SchoolSystem.Core.Commands
 {
-    internal class RemoveStudent : ICommand
+    public class RemoveStudent : ICommand
     {
         public string Execute(IList<string> parameters)
         {
-            int studentIdToRemove = int.Parse(parameters[2]);
-            PersonnelArchive.Students.Remove(studentIdToRemove);
+            int studentToRemoveId = int.Parse(parameters[0]);
+            PersonellArchive.Students.Remove(studentToRemoveId);
 
-            return $"Student with ID {studentIdToRemove} was sucessfully removed.";
+            return $"Student with ID {studentToRemoveId} was sucessfully removed.";
         }
     }
 }

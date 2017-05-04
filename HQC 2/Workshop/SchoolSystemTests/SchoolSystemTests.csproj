@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D544BBD2-94E5-4EA3-B5BB-45C49243EB94}</ProjectGuid>
+    <ProjectGuid>{F2C739D7-64C5-4093-BDE6-A570F2538207}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SchoolSystem.Tests</RootNamespace>
-    <AssemblyName>SchoolSystem.Tests</AssemblyName>
+    <RootNamespace>SchoolSystemTests</RootNamespace>
+    <AssemblyName>SchoolSystemTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,17 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MarkTests\MarkConstructorAndPropertiesTests.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Core\EngineTests.cs" />
+    <Compile Include="Models\MarkTests.cs" />
+    <Compile Include="Models\StudentTests.cs" />
+    <Compile Include="Models\TeacherTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication3\SchoolSystem.csproj">
       <Project>{03FEAB64-C7D3-4E0D-A5A3-1A26B51C5EEB}</Project>
       <Name>SchoolSystem</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
