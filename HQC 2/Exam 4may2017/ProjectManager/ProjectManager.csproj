@@ -51,11 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Commands\CreateProjectCommand.cs" />
+    <Compile Include="Core\Commands\CreateTaskCommand.cs" />
+    <Compile Include="Core\Commands\CreateUserCommand.cs" />
     <Compile Include="Core\Providers\EnginePRovider.cs" />
     <Compile Include="Core\Commands\Contracts\ICommand.cs" />
-    <Compile Include="Core\Commands\CreationalCommands.cs" />
     <Compile Include="Core\Commands\CommandsFactory.cs" />
-    <Compile Include="Core\Commands\ListingCommands.cs" />
+    <Compile Include="Core\Commands\ListProjectsCommand.cs" />
     <Compile Include="Common\Exceptions\UserValidationException.cs" />
     <Compile Include="Common\Providers\Validator.cs" />
     <Compile Include="Data\Database.cs" />

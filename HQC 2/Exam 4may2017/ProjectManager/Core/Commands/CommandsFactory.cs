@@ -1,6 +1,6 @@
 ﻿using ProjectManager.Commands;
 using ProjectManager.Common.Exceptions;
-using ProjectManager.Common.Providers;
+using ProjectManager.Core.Commands.Contracts;
 using ProjectManager.Data;
 using ProjectManager.Models;
 using System;
@@ -9,45 +9,41 @@ namespace ProjectManager.Core.Commands
 {
     public class CommandsFactory
     {
+        private Database dataBase;
+        private ModelsFactory factory;
+
+        public CommandsFactory(Database dataBase, ModelsFactory factory)
+        {
+            this.dataBase = dataBase;
+            this.factory = factory;
+        }
 
         public ICommand CreateCommandFromString(string commandName)
         {
-            var cmd = BuildCommand(commandName);
+            var command = BuildCommand(commandName);
 
-            switch (cmd)
+            switch (command)
             {
-                case "createproject": return new CreateProjectCommand(db, zavod);
+                case "createproject": return new CreateProjectCommand(dataBase, factory);
                 case "createtask": return new CreateTaskCommand();
-                case "listprojects": return new ListProjectsCommand(db);
+                case "listprojects": return new ListProjectsCommand(dataBase);
                 default: throw new UserValidationException("The passed command is not valid!");
             }
-        }
-        public Database db;
+        }      
 
         private string BuildCommand(string parameters)
         {
-            var cmd = string.Empty;
+            var command = string.Empty;
 
-
-            var end = DateTime.Now + TimeSpan.FromSeconds(1);
-            while (DateTime.Now < end);
+            //var end = DateTime.Now + TimeSpan.FromSeconds(1);
+            //while (DateTime.Now < end);
 
             for (int i = 0; i < parameters.Length; i++)
             {
-                cmd += parameters[i].ToString().ToLower();
+                command += parameters[i].ToString().ToLower();
             }
             
-
-            return cmd;
-        }
-
-        public CommandsFactory(Database db, ModelsFactory zavod)
-        {
-            this.db = db;
-            this.zavod = zavod;
-        }
-        public ModelsFactory zavod;
+            return command;
+        }      
     }
-
 }
-

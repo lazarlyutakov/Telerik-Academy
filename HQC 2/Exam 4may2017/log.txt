@@ -1,0 +1,8 @@
+1. Class CommandFactory, now in ProjectManager.Core.Commands namespace : 
+ -- var end = DateTime.Now + TimeSpan.FromSeconds(1);
+    while (DateTime.Now < end);
+
+useless loop and variable
+
+------------------------------------------------------------------------------------
+
