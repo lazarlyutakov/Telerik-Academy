@@ -22,12 +22,12 @@ namespace ProjectManager.Models
             {
                 throw new UserValidationException("Failed to parse the passed starting date!");
             }
-                
+
             if (!endingDateSuccessful)
             {
                 throw new UserValidationException("Failed to parse the passed ending date!");
             }
-                
+
             var project = new Project(name, starting, end, state);
             validator.Validate(project);
 
@@ -42,13 +42,13 @@ namespace ProjectManager.Models
             return task;
         }
 
-        
+
         public User CreateUser(string username, string email)
         {
             var user = new User(email, username);
             validator.Validate(user);
 
             return user;
-        }       
+        }
     }
 }

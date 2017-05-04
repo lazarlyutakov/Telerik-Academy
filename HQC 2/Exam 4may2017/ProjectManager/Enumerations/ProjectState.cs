@@ -8,7 +8,7 @@ namespace ProjectManager.Enumerations
 {
     public enum ProjectState
     {
-        Active,
-        Inactive,
+        Active = 0,
+        Inactive = 1,
     }
 }

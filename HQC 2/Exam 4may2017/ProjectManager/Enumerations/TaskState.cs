@@ -8,8 +8,8 @@ namespace ProjectManager.Enumerations
 {
     public enum TaskState
     {
-        Pending,
-        InProgress,
-        Done
+        Pending = 0,
+        InProgress = 1,
+        Done = 2
     }
 }

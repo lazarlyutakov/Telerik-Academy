@@ -19,10 +19,5 @@ namespace ProjectManager.Core.Providers
         {
             engine.Start();
         }
-
-        public int Calc(int a, int b)
-        {
-            return a + b;
-        }
     }
 }

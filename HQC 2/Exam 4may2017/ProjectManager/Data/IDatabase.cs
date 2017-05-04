@@ -1,4 +1,5 @@
 ﻿using ProjectManager.Models;
+using ProjectManager.Models.Contracts;
 using System.Collections.Generic;
 
 namespace ProjectManager.Data
