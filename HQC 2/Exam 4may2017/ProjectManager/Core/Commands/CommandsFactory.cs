@@ -9,12 +9,10 @@ namespace ProjectManager.Core.Commands
     public class CommandsFactory
     {
         private Database dataBase;
-        private ModelsFactory factory;
 
-        public CommandsFactory(Database dataBase, ModelsFactory factory)
+        public CommandsFactory(Database dataBase)
         {
             this.dataBase = dataBase;
-            this.factory = factory;
         }
 
         public ICommand CreateCommandFromString(string commandName)
@@ -23,7 +21,7 @@ namespace ProjectManager.Core.Commands
 
             switch (command)
             {
-                case "createproject": return new CreateProjectCommand(dataBase, factory);
+                case "createproject": return new CreateProjectCommand(dataBase);
                 case "createtask": return new CreateTaskCommand();
                 case "listprojects": return new ListProjectsCommand(dataBase);
                 default: throw new UserValidationException("The passed command is not valid!");

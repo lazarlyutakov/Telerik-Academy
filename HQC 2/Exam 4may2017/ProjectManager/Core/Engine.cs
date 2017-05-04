@@ -40,14 +40,14 @@ namespace ProjectManager
 
                 if (commandFromInput.ToLower() == TerminationCommand.ToLower())
                 {
-                    Console.WriteLine("Program terminated.");
+                    writer.WriteLine("Program terminated.");
                     break;
                 }
 
                 try
                 {
                     var executionResult = this.processor.Process(commandFromInput);
-                    Console.WriteLine(executionResult);
+                    writer.WriteLine(executionResult);
                 }
                 catch (UserValidationException ex)
                 {

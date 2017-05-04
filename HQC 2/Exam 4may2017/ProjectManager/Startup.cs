@@ -11,7 +11,7 @@ namespace ProjectManager
     {
         public static void Main()
         {
-            var engine = new Engine(new FileLogger(), new CommandProcessor (new CommandsFactory(new Database(),new ModelsFactory())));
+            var engine = new Engine(new FileLogger(), new CommandProcessor (new CommandsFactory(new Database())));
 
             var provider = new ProjectManager.Core.Providers.EngineProvider(engine);
             provider.Initialize();

@@ -30,7 +30,10 @@ The if statement for Task.Count is below builder.Append commands, which is not r
 
 -------------------------------------------------------------------------------------------------------
 
+5. class CommandFactory -> BuilCommand method : we do not need int, could be removed and the parameter of CreateCommandFromString
+method to be set to ToLower();
 
+-----------------------------------------------------------------------------------------------------
 
 
 
