@@ -1,29 +1,36 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ProjectManager.Enumerations;
+using ProjectManager.Models.Contracts;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ProjectManager.Models
 {
-    public class Task
+    public class Task : ITask
     {
+        
+        public Task(string name, User owner, TaskState state)
+        {
+            this.Name = name;
+            this.Owner = owner;
+            this.State = state;
+        }
+
         [Required(ErrorMessage = "Task Name is required!")]
-        public string nm { get; set; }
+        public string Name { get; }
+
         [Required(ErrorMessage = "Task Owner is required")]
-        public User own { get; set; }
+        public IUser Owner { get; }
+
+        public TaskState State { get; }
+
         public override string ToString()
         {
             var builder = new StringBuilder();
 
-            builder.AppendLine("    Name: " + this.nm);
-            builder.Append("    State: " + this.st);
+            builder.AppendLine("    Name: " + this.Name);
+            builder.Append("    State: " + this.State);
 
             return builder.ToString();
-        }
-        public string st { get; set; }
-        public Task(string name, User owner, string state)
-        {
-            this.nm = name;
-            this.own = owner;
-            this.st = state;
         }
     }
 }

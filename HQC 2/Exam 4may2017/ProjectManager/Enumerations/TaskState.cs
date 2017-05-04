@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjectManager.Enumerations
 {
-    public enum State
+    public enum TaskState
     {
-        Active,
-        Inactive,
         Pending,
         InProgress,
         Done

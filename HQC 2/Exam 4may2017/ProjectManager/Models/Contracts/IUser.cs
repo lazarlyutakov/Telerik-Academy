@@ -8,8 +8,10 @@ namespace ProjectManager.Models.Contracts
 {
     public interface IUser
     {
-         string UserName { get; }
+        string UserName { get; }
 
         string Email { get; }
+
+        string ToString();
     }
 }

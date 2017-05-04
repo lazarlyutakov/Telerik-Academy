@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjectManager.Enumerations;
 
 namespace ProjectManager.Models.Contracts
 {
-    class ITask
+    public interface ITask
     {
+        string Name { get; }
+
+        IUser Owner { get; }
+
+        TaskState State { get; }
+
+        string ToString();
     }
 }
