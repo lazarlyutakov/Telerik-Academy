@@ -10,21 +10,19 @@ using System.Text;
 
 namespace ProjectManager
 {
-    class Engine
+    public class Engine
     {
         private FileLogger logger;
-        private CmdCPU processor;
+        private CommandProcessor processor;
 
-        public Engine(FileLogger logger, CmdCPU processor)
+        public Engine(FileLogger logger, CommandProcessor processor)
         {
             // validate clauses
             Guard.WhenArgument(logger, "Engine Logger provider").IsNull().Throw();
 
             Guard.WhenArgument(processor, "Engine Processor provider").IsNull().Throw();
 
-
             this.logger = logger;
-
             this.processor = processor;
         }
 

@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectManager
+namespace ProjectManager.Core.Providers
 {
     class EnginePRovider
     {
-        public Engine eng;
+        private Engine engine;
 
-        public EnginePRovider(Engine eng)
+        public EnginePRovider(Engine engine)
         {
-            this.eng = eng;
+            this.engine = engine;
         }
 
-        public void DiiKonio()
+        public void Initialize()
         {
-            eng.Start();
+            engine.Start();
         }
     }
 }

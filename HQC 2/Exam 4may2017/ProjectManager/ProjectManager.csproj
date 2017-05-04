@@ -7,7 +7,7 @@
     <ProjectGuid>{6D548169-75E7-495F-BC01-0C8CF6F6BE04}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pesho</RootNamespace>
+    <RootNamespace>ProjectManager</RootNamespace>
     <AssemblyName>ProjectManager</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -54,6 +54,10 @@
     <Compile Include="Core\Commands\CreateProjectCommand.cs" />
     <Compile Include="Core\Commands\CreateTaskCommand.cs" />
     <Compile Include="Core\Commands\CreateUserCommand.cs" />
+    <Compile Include="Core\Providers\ConsoleReaderProvider.cs" />
+    <Compile Include="Core\Providers\ConsoleWriterProvider.cs" />
+    <Compile Include="Core\Providers\Contracts\IConsoleReaderProvider.cs" />
+    <Compile Include="Core\Providers\Contracts\IConsoleWriterProvider.cs" />
     <Compile Include="Core\Providers\EnginePRovider.cs" />
     <Compile Include="Core\Commands\Contracts\ICommand.cs" />
     <Compile Include="Core\Commands\CommandsFactory.cs" />
@@ -61,6 +65,7 @@
     <Compile Include="Common\Exceptions\UserValidationException.cs" />
     <Compile Include="Common\Providers\Validator.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Enumerations\State.cs" />
     <Compile Include="Models\Contracts\IProject.cs" />
     <Compile Include="Models\ModelsFactory.cs" />
     <Compile Include="Data\IDatabase.cs" />
@@ -94,8 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
-    <Folder Include="Core\Providers\Contracts\" />
-    <Folder Include="Enumerations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
