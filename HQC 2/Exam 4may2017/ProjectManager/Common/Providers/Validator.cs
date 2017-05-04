@@ -37,7 +37,6 @@ namespace ProjectManager.Common.Providers
                         yield return validationAttribute.ErrorMessage;
                     }
                 }
-
             }
         }
     }

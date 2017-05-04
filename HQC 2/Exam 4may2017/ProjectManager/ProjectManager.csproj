@@ -67,6 +67,8 @@
     <Compile Include="Data\Database.cs" />
     <Compile Include="Enumerations\State.cs" />
     <Compile Include="Models\Contracts\IProject.cs" />
+    <Compile Include="Models\Contracts\ITask.cs" />
+    <Compile Include="Models\Contracts\IUser.cs" />
     <Compile Include="Models\ModelsFactory.cs" />
     <Compile Include="Data\IDatabase.cs" />
     <Compile Include="Models\Project.cs" />

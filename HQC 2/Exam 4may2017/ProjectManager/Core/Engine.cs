@@ -1,8 +1,8 @@
 ﻿using Bytes2you.Validation;
-using ProjectManager.Commands;
 using ProjectManager.Common;
 using ProjectManager.Common.Exceptions;
 using ProjectManager.Common.Providers;
+using ProjectManager.Core.Providers;
 using ProjectManager.Data;
 using ProjectManager.Models;
 using System;
@@ -12,6 +12,8 @@ namespace ProjectManager
 {
     public class Engine
     {
+        private const string TerminationCommand = "Exit";
+
         private FileLogger logger;
         private CommandProcessor processor;
 
@@ -28,12 +30,15 @@ namespace ProjectManager
 
         public void Start()
         {
-            for (;;)
+            while(true)
             {
                 // read from console
-                var cls = Console.ReadLine();
+                var reader = new ConsoleReaderProvider();
+                var writer = new ConsoleWriterProvider();
 
-                if (cls.ToLower() == "exit")
+                var commandFromInput = reader.ReadLine();
+
+                if (commandFromInput.ToLower() == TerminationCommand.ToLower())
                 {
                     Console.WriteLine("Program terminated.");
                     break;
@@ -41,17 +46,17 @@ namespace ProjectManager
 
                 try
                 {
-                    var executionResult = this.processor.process(cls);
+                    var executionResult = this.processor.Process(commandFromInput);
                     Console.WriteLine(executionResult);
                 }
                 catch (UserValidationException ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    writer.WriteLine(ex.Message);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Opps, something happened. :(");
-                    this.logger.error(ex.Message);
+                    writer.WriteLine("Opps, something happened. :(");
+                    this.logger.Error(ex.Message);
                 }
             }
         }
