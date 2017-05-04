@@ -1,4 +1,5 @@
 ﻿using ProjectManager.Common.Exceptions;
+using ProjectManager.Common.Providers;
 using ProjectManager.Core.Commands.Contracts;
 using ProjectManager.Data;
 using ProjectManager.Models;
@@ -12,11 +13,11 @@ namespace ProjectManager.Core.Commands
 {
     public class CreateUserCommand : ICommand
     {
+        private readonly Validator validator = new Validator();
+
         public string Execute(List<string> parameters)
         {
             var dataBase = new Database();
-
-            var factory = new ModelsFactory();
 
             if (parameters.Count != 3)
             {
@@ -30,12 +31,20 @@ namespace ProjectManager.Core.Commands
             
 
             if (dataBase.Projects[int.Parse(parameters[0])].Users.Any() && 
-                dataBase.Projects[int.Parse(parameters[0])].Users.Any(x => x.UN == parameters[1]))
+                dataBase.Projects[int.Parse(parameters[0])].Users.Any(x => x.UserName == parameters[1]))
             {
                 throw new UserValidationException("A user with that username already exists!");
             }
 
-            dataBase.Projects[int.Parse(parameters[0])].Users.Add(factory.CreateUser(parameters[1], parameters[2]));
+            var projectId = int.Parse(parameters[0]);
+            var userName = parameters[1];
+            var email = parameters[2];
+
+            var user = new User(userName, email);
+            validator.Validate(user);
+
+            var projectToAddUserTo = dataBase.Projects[projectId];
+            projectToAddUserTo.Users.Add(user);
 
             return "Successfully created a new user!";
         }

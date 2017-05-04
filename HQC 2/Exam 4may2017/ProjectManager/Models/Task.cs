@@ -8,7 +8,7 @@ namespace ProjectManager.Models
     public class Task : ITask
     {
         
-        public Task(string name, User owner, TaskState state)
+        public Task(string name, IUser owner, TaskState state)
         {
             this.Name = name;
             this.Owner = owner;

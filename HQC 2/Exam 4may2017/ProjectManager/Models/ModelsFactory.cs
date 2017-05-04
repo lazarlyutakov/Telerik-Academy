@@ -2,6 +2,7 @@
 using ProjectManager.Common.Exceptions;
 using ProjectManager.Common.Providers;
 using ProjectManager.Enumerations;
+using ProjectManager.Models.Contracts;
 using System;
 
 namespace ProjectManager.Models
@@ -34,7 +35,7 @@ namespace ProjectManager.Models
             return project;
         }
 
-        public Task CreateTask(User owner, string name, TaskState state)
+        public Task CreateTask(string name, IUser owner, TaskState state)
         {
             var task = new Task(name, owner, state);
             validator.Validate(task);

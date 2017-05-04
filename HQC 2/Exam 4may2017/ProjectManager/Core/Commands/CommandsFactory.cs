@@ -1,5 +1,4 @@
-﻿using ProjectManager.Commands;
-using ProjectManager.Common.Exceptions;
+﻿using ProjectManager.Common.Exceptions;
 using ProjectManager.Core.Commands.Contracts;
 using ProjectManager.Data;
 using ProjectManager.Models;

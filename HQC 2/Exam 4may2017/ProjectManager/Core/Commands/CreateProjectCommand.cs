@@ -1,5 +1,6 @@
 ﻿using Bytes2you.Validation;
 using ProjectManager.Common.Exceptions;
+using ProjectManager.Common.Providers;
 using ProjectManager.Core.Commands.Contracts;
 using ProjectManager.Data;
 using ProjectManager.Enumerations;
@@ -12,8 +13,9 @@ namespace ProjectManager.Core.Commands
 {
     public class CreateProjectCommand : ICommand
     {
-        public Database dataBase;
-        public ModelsFactory factory;
+        private readonly Validator validator = new Validator();
+
+        private Database dataBase;
 
         public CreateProjectCommand(Database database, ModelsFactory factory)
         {
@@ -21,7 +23,6 @@ namespace ProjectManager.Core.Commands
             Guard.WhenArgument(factory, "CreateProjectCommand ModelsFactory").IsNull().Throw();
 
             this.dataBase = database;
-            this.factory = factory;
         }
 
         public string Execute(List<string> parameters)
@@ -40,13 +41,18 @@ namespace ProjectManager.Core.Commands
             {
                 throw new UserValidationException("A project with that name already exists!");
             }
-
+         
             var name = parameters[0];
             var startingDate = parameters[1];
             var endingDate = parameters[2];
             var state = (ProjectState)int.Parse(parameters[3]);
-                
-            var project = factory.CreateProject(name, startingDate, endingDate, state);
+
+            var startingDateSuccessful = Convert.ToDateTime(startingDate);
+            var endingDateSuccessful = Convert.ToDateTime(endingDate);
+
+            var project = new Project(name, startingDateSuccessful, endingDateSuccessful, state);
+            validator.Validate(project);
+
             dataBase.Projects.Add(project);
 
             return "Successfully created a new project!";

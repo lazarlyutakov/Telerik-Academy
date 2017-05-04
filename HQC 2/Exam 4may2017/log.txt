@@ -11,16 +11,21 @@ useless loop and variable
 
 # Bugs :
 --------
-1. The "State" properties of the classes Project and Task are in string data type. Instead, I created 2 enumerations : 
+
+1. The class ModelsFactory is not neccessary -> middle man.
+
+---------------------------------------------------------------------------------------
+
+2. The "State" properties of the classes Project and Task are in string data type. Instead, I created 2 enumerations : 
 ProjectState and TaskState and used them as data types of the above mentioned properties.
 
 ----------------------------------------------------------------------------------------
 
-2. Task and User collections in Project class should of ITask and IUser type. Same for the corresponding interface.
+3. Task and User collections in Project class should of ITask and IUser type. Same for the corresponding interface.
 
 ---------------------------------------------------------------------------------------------------------------
 
-3. class Project -> method ToString() : the curly brackets of the if statements are missing.
+4. class Project -> method ToString() : the curly brackets of the if statements are missing.
 The if statement for Task.Count is below builder.Append commands, which is not right. Moved above them.
 
 -------------------------------------------------------------------------------------------------------
