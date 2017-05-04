@@ -1,26 +1,22 @@
-﻿using ProjectManager.Commands;
+﻿using System;
+using ProjectManager;
 using ProjectManager.Common;
+using ProjectManager.Core.Commands;
+using ProjectManager.Data;
+using ProjectManager.Models;
+using 
 
-
-using ProjectManager.Common.Providers;
 
 namespace ProjectManager
 {
-    using ProjectManager.Data;
-    using ProjectManager.Models;
-
     public class Startup
     {
         public static void Main()
         {
-            var eng = new Engine("new FileLogger()",
-                new CmdCPU(
-                    new CmdsFactory(
-                        new Database(),
-                        new ModelsFactory())));
+            var engine = new Engine(new FileLogger(), new CommandProcessor (new CommandsFactory(new Database(),new ModelsFactory())));
 
-            var provider = new EnginePRovider(eng);
-            provider.DiiKonio();
+            var provider = new ProjectManager.Core.Providers.EngineProvider(engine);
+            provider.Initialize();
         }
     }
 }

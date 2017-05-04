@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjectManager.Core.Providers
 {
-    class EnginePRovider
+    public class EngineProvider
     {
         private Engine engine;
 
-        public EnginePRovider(Engine engine)
+        public EngineProvider(Engine engine)
         {
             this.engine = engine;
         }
@@ -18,6 +18,11 @@ namespace ProjectManager.Core.Providers
         public void Initialize()
         {
             engine.Start();
+        }
+
+        public int Calc(int a, int b)
+        {
+            return a + b;
         }
     }
 }
