@@ -14,6 +14,8 @@ namespace Log4Net
 
             // go to Log4Net/bin/Debug/log.txt to see rezult
             logger.Info(DateTime.Now);
+            var tt = "Tdjlnvjlnr";
+            Console.WriteLine(tt.ToLower());
         }
     }
 }
