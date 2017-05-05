@@ -1,5 +1,6 @@
 ﻿using Bytes2you.Validation;
 using ProjectManager.Core.Commands;
+using ProjectManager.Core.Commands.Contracts;
 using System;
 using System.Linq;
 
@@ -14,7 +15,7 @@ namespace ProjectManager.Common
             this.factory = factory;
         }
 
-        public string Process(string commandInput)
+        public ICommand Process(string commandInput)
         {
             if (string.IsNullOrWhiteSpace(commandInput))
             {
@@ -23,13 +24,7 @@ namespace ProjectManager.Common
 
             var command = this.factory.CreateCommandFromString(commandInput.Split(' ')[0]);
 
-            return command.Execute(command.Split(' ').Skip(1).ToList()); ;
-
-            //// don't remove, code will blow up
-            //if(cl.Split(' ').Count() > 10)
-            //{
-            //    throw new ArgumentException();
-            //}
+            return command;
         }
     }
 }

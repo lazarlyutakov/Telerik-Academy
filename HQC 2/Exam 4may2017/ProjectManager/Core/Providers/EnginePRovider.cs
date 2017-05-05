@@ -17,7 +17,7 @@ namespace ProjectManager.Core.Providers
 
         public void Initialize()
         {
-            engine.Start();
+            this.engine.Start();
         }
     }
 }

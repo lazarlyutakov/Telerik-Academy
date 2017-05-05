@@ -62,5 +62,3 @@ namespace ProjectManager.Models
         }
     }
 }
-
-

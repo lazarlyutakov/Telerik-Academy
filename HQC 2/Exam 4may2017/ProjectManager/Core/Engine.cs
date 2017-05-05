@@ -2,6 +2,7 @@
 using ProjectManager.Common;
 using ProjectManager.Common.Exceptions;
 using ProjectManager.Common.Providers;
+using ProjectManager.Core.Commands.Contracts;
 using ProjectManager.Core.Providers;
 using ProjectManager.Data;
 using ProjectManager.Models;
@@ -10,7 +11,7 @@ using System.Text;
 
 namespace ProjectManager
 {
-    public class Engine
+    public class Engine : IEngine
     {
         private const string TerminationCommand = "Exit";
 
@@ -30,7 +31,7 @@ namespace ProjectManager
 
         public void Start()
         {
-            while(true)
+            while (true)
             {
                 // read from console
                 var reader = new ConsoleReaderProvider();
@@ -47,7 +48,6 @@ namespace ProjectManager
                 try
                 {
                     var executionResult = this.processor.Process(commandFromInput);
-                    writer.WriteLine(executionResult);
                 }
                 catch (UserValidationException ex)
                 {
@@ -55,7 +55,7 @@ namespace ProjectManager
                 }
                 catch (Exception ex)
                 {
-                    writer.WriteLine("Opps, something happened. :(");
+                    writer.WriteLine(ex.Message);
                     this.logger.Error(ex.Message);
                 }
             }

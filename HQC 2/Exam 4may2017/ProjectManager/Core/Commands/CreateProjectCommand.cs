@@ -36,7 +36,7 @@ namespace ProjectManager.Core.Commands
                 throw new UserValidationException("Some of the passed parameters are empty!");
             }
                 
-            if (dataBase.Projects.Any(x => x.Name == parameters[0]))
+            if (this.dataBase.Projects.Any(x => x.Name == parameters[0]))
             {
                 throw new UserValidationException("A project with that name already exists!");
             }
@@ -50,9 +50,9 @@ namespace ProjectManager.Core.Commands
             var endingDateSuccessful = Convert.ToDateTime(endingDate);
 
             var project = new Project(name, startingDateSuccessful, endingDateSuccessful, state);
-            validator.Validate(project);
+            this.validator.Validate(project);
 
-            dataBase.Projects.Add(project);
+            this.dataBase.Projects.Add(project);
 
             return "Successfully created a new project!";
         }     

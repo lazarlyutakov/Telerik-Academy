@@ -1,4 +1,5 @@
-﻿using ProjectManager.Common.Exceptions;
+﻿using Bytes2you.Validation;
+using ProjectManager.Common.Exceptions;
 using ProjectManager.Common.Providers;
 using ProjectManager.Core.Commands.Contracts;
 using ProjectManager.Data;
@@ -15,6 +16,15 @@ namespace ProjectManager.Core.Commands
     {
         private readonly Validator validator = new Validator();
 
+        private IDatabase dataBase;
+
+        public CreateUserCommand(IDatabase database)
+        {
+            Guard.WhenArgument(database, "CreateUserCommand Database").IsNull().Throw();
+
+            this.dataBase = database;
+        }
+
         public string Execute(List<string> parameters)
         {
             var dataBase = new Database();
@@ -29,7 +39,6 @@ namespace ProjectManager.Core.Commands
                  throw new UserValidationException("Some of the passed parameters are empty!");
             }
             
-
             if (dataBase.Projects[int.Parse(parameters[0])].Users.Any() && 
                 dataBase.Projects[int.Parse(parameters[0])].Users.Any(x => x.UserName == parameters[1]))
             {
@@ -41,7 +50,7 @@ namespace ProjectManager.Core.Commands
             var email = parameters[2];
 
             var user = new User(userName, email);
-            validator.Validate(user);
+            this.validator.Validate(user);
 
             var projectToAddUserTo = dataBase.Projects[projectId];
             projectToAddUserTo.Users.Add(user);

@@ -1,9 +1,8 @@
 ﻿using System;
-using ProjectManager;
 using ProjectManager.Common;
 using ProjectManager.Core.Commands;
+using ProjectManager.Core.Providers;
 using ProjectManager.Data;
-using ProjectManager.Models;
 
 namespace ProjectManager
 {
@@ -11,9 +10,14 @@ namespace ProjectManager
     {
         public static void Main()
         {
-            var engine = new Engine(new FileLogger(), new CommandProcessor (new CommandsFactory(new Database())));
+            var fileLogger = new FileLogger();
+            var dataBase = new Database();
+            var commandFactory = new CommandsFactory(dataBase);
+            var commandProcessor = new CommandProcessor(commandFactory);
 
-            var provider = new ProjectManager.Core.Providers.EngineProvider(engine);
+            var engine = new Engine(fileLogger, commandProcessor);
+
+            var provider = new EngineProvider(engine);
             provider.Initialize();
         }
     }

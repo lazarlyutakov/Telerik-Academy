@@ -1,4 +1,5 @@
-﻿using ProjectManager.Common.Exceptions;
+﻿using Bytes2you.Validation;
+using ProjectManager.Common.Exceptions;
 using ProjectManager.Common.Providers;
 using ProjectManager.Core.Commands.Contracts;
 using ProjectManager.Data;
@@ -13,6 +14,15 @@ namespace ProjectManager.Core.Commands
     public class CreateTaskCommand : ICommand
     {
         private readonly Validator validator = new Validator();
+
+        private IDatabase dataBase;
+
+        public CreateTaskCommand(IDatabase database)
+        {
+            Guard.WhenArgument(database, "CreateTaskCommand Database").IsNull().Throw();
+
+            this.dataBase = database;
+        }
 
         public string Execute(List<string> parameters)
         {
@@ -37,7 +47,7 @@ namespace ProjectManager.Core.Commands
             var owner = projectOfOwner.Users[userId];
 
             var task = new Task(name, owner, state);
-            validator.Validate(task);
+            this.validator.Validate(task);
 
             return "Successfully created a new task!";
         }

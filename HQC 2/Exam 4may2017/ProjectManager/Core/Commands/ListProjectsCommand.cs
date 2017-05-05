@@ -8,8 +8,7 @@ using System.Linq;
 
 namespace ProjectManager.Core.Commands
 {
-
-    sealed class ListProjectsCommand : ICommand
+    public sealed class ListProjectsCommand : ICommand
     {
        private Database dataBase;
 

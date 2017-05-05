@@ -6,8 +6,7 @@ using System.Text;
 namespace ProjectManager.Models
 {
     public class Task : ITask
-    {
-        
+    {       
         public Task(string name, IUser owner, TaskState state)
         {
             this.Name = name;

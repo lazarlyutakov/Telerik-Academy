@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 namespace ProjectManager.Data
 {
-    // You are not allowed to modify this interface (except to add documentation)
+    /// <summary>
+    /// Interface for the database, the projects are being kept.
+    /// </summary>
     public interface IDatabase
     {
         IList<IProject> Projects { get; }
